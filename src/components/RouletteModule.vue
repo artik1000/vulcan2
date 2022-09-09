@@ -44,8 +44,11 @@
 <script>
 import RouletteButton from "@/components/RouletteButton";
 import ModalWindow from "@/components/ModalWindow";
-import AfterspinModalcontent from "@/components/AfterspinModalcontent";
 import ModalButton from "@/components/ModalButton";
+import { defineAsyncComponent } from 'vue'
+const AfterspinModalcontent = defineAsyncComponent(() =>
+    import('@/components/AfterspinModalcontent')
+)
 export default {
   name: "roulette-module",
   components: {ModalButton, AfterspinModalcontent, ModalWindow, RouletteButton},
@@ -59,11 +62,11 @@ export default {
     spinStart () {
       this.startSpin = true
       setTimeout(() => {
+        this.startSpin = false
         this.dialogVisible = true
       },3100)
     },
     spinEnd () {
-      this.startSpin = false
       this.dialogVisible = false
     }
   },

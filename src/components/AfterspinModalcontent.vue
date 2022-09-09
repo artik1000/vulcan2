@@ -9,7 +9,7 @@
         <h2>1.500 EUR UND</h2>
         <h2>270 FREISPIELE</h2>
     </div>
-    <div class="modal-main__money-img">
+    <div class="modal-main__money-img" loading="lazy">
     </div>
     <div>
       <slot></slot>
