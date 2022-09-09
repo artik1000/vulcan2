@@ -4,8 +4,9 @@
         class="roulette-button"
         :class="startSpin ? 'roulette-button_spinning' : 'roulette-button_not-spinning'"
         @click="$emit('startSpin')"
+        :disabled="startSpin === true"
     >
-      Spin
+      <div class="roulette-button__text">Spin</div>
     </button>
   </div>
 </template>
@@ -23,6 +24,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.roulette-button__text{
+  position: absolute;
+  top: 0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: fit-content;
+  width: fit-content;
+}
+@media screen and (min-width: 481px) {
 .roulette-button-background {
   background: #e4e2e5;
   padding: 10px;
@@ -42,6 +54,8 @@ export default {
   font-weight: bold;
   text-transform: uppercase;
   font-size: 35px;
+  position: relative;
+}
 }
 .roulette-button_not-spinning{
   /*first state*/
@@ -78,6 +92,7 @@ export default {
     font-weight: bold;
     text-transform: uppercase;
     font-size: 25px;
+    position: relative;
   }
 }
 </style>

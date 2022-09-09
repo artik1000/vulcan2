@@ -21,6 +21,9 @@ export default {
 *{
   box-sizing: border-box;
 }
+button{
+appearance: none;
+}
 body{
   margin: 0;
   padding: 0;
