@@ -43,9 +43,11 @@
 
 <script>
 import RouletteButton from "@/components/RouletteButton";
-import ModalWindow from "@/components/ModalWindow";
 import ModalButton from "@/components/ModalButton";
 import { defineAsyncComponent } from 'vue'
+const ModalWindow = defineAsyncComponent(() =>
+    import('@/components/ModalWindow')
+)
 const AfterspinModalcontent = defineAsyncComponent(() =>
     import('@/components/AfterspinModalcontent')
 )
